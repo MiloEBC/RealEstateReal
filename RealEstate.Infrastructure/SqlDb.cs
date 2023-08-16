@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Realestate.Models;
+using RealEstate.domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,6 @@ namespace RealEstate.Infrastructure
         }
 
         public DbSet<RealEstatesE> realEstates { get; set; }
-
+        public DbSet<Booking> bookings { get; set; }
     }
 }

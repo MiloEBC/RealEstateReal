@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Realestate.Models;
 using RealEstate.Application.Services.RealEstateService;
+using RealEstate.Application.Services.BookingService;
+using RealEstate.domain.Models;
 
 namespace Realestate.Controllers
 {
@@ -11,13 +13,21 @@ namespace Realestate.Controllers
     {
         private readonly IRealestateQuery _realestateQuery;
         private readonly IRealEstateCommand _realEstateCommand;
+        private readonly IBookingCommand _bookingCommand;
 
-        public RealEstatesControlle(IRealestateQuery realestateQuery, IRealEstateCommand realEstateCommand ) //kan få adgang til superhero service og metoder
+        public RealEstatesControlle(IRealestateQuery realestateQuery, IRealEstateCommand realEstateCommand, IBookingCommand bookingCommand ) //kan få adgang til superhero service og metoder
         {
             
             _realestateQuery = realestateQuery;
             _realEstateCommand = realEstateCommand;
+
+            _bookingCommand = bookingCommand;
+
+
         }
+
+
+
         [HttpGet]
         public async Task<ActionResult<List<RealEstatesE>>> GetAllEstates()
         {
@@ -53,6 +63,7 @@ namespace Realestate.Controllers
 
             return Ok(result);
         }
+
 
         [HttpPut("{id}")]
 

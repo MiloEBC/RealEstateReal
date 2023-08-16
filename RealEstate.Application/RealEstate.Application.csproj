@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RealEstate.domain\RealEstate.domain.csproj" />
+    <ProjectReference Include="..\SharedModelsAndValidation\SharedModelsAndValidation.csproj" />
   </ItemGroup>
 
 </Project>

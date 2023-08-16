@@ -1,9 +1,10 @@
 global using Realestate.Models;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-
+using RealEstate.Application.Services.BookingService;
 using RealEstate.Application.Services.RealEstateService;
 using RealEstate.Infrastructure;
+using RealEstate.Infrastructure.Services.BookingService;
 using RealEstate.Infrastructure.Services.RealEstateService;
 using System.Reflection;
 
@@ -20,7 +21,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRealEstateCommand, RealEstateCommand>();
 builder.Services.AddScoped<IRealestateQuery, RealEstateQuery>();
 builder.Services.AddScoped<IRealEstateRepoService, RealEstateRepos>();
-    
+builder.Services.AddScoped<IBookingCommand, BookingCommand>();
+builder.Services.AddScoped <IBookingRepoService, BookingRepos>();
+
+
+
 
 #region SQL client
 builder.Services.AddDbContext<SqlDb>(

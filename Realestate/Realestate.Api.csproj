@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RealEstate.Application\RealEstate.Application.csproj" />
     <ProjectReference Include="..\RealEstate.Infrastructure\RealEstate.Infrastructure.csproj" />
+    <ProjectReference Include="..\SharedModelsAndValidation\SharedModelsAndValidation.csproj" />
   </ItemGroup>
 
 </Project>
