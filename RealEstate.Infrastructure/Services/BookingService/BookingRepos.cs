@@ -1,12 +1,6 @@
 ﻿using Realestate.Models;
 using RealEstate.Application.Services.BookingService;
 using RealEstate.domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 
 namespace RealEstate.Infrastructure.Services.BookingService
 {
@@ -18,25 +12,19 @@ namespace RealEstate.Infrastructure.Services.BookingService
         {
             _sqlDb = sqlDb;
         }
-
         public int CreateBooking(Booking booking)
         {
             _sqlDb.bookings.Add(booking);
 
-            //_sqlDb.booking.Add(booking);
-
             _sqlDb.SaveChanges();
-
-
 
             return booking.Id;
 
 
         }
-
         public RealEstatesE LoadRealEstate(int id)
         {
-            var result =_sqlDb.realEstates.Find(id);
+            var result = _sqlDb.realEstates.Find(id);
 
             return result;
         }

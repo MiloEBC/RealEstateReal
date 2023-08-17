@@ -14,7 +14,7 @@ namespace Realestate.Api.Controllers
 
         private readonly IBookingCommand _bookingCommand;
 
-        public BookingController(IBookingCommand bookingCommand) //kan få adgang til superhero service og metoder
+        public BookingController(IBookingCommand bookingCommand) //kan få adgang til service og metoder
         {
 
 

@@ -11,7 +11,7 @@ namespace Realestate.Models
 
         public string PostNr { get; set; } = string.Empty;
 
-        public List<Booking> bookings { get; set; }
+        public List<Booking>? bookings { get; set; }
 
 
     }

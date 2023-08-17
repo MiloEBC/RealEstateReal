@@ -31,10 +31,10 @@ namespace Realestate.Controllers
         [HttpGet]
         public async Task<ActionResult<List<RealEstatesE>>> GetAllEstates()
         {
-            var resut = _realestateQuery.GetAllEstates();
+            var result = _realestateQuery.GetAllEstates();
 
 
-            return Ok(resut);
+            return Ok(result);
 
         }
 

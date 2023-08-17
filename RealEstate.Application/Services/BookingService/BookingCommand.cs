@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SharedModelsAndValidation;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml;
 
 namespace RealEstate.Application.Services.BookingService
 {
@@ -30,17 +31,21 @@ namespace RealEstate.Application.Services.BookingService
 
         public int CreateBooking(CreateBookingRequest valuesNeededForBooking )
         {
+
             RealEstatesE realEstateNeededForBooking = _bookingService.LoadRealEstate(valuesNeededForBooking.RealEstateId);
 
             Booking booking1 = new Booking()
             {
+
+                RealEstate = realEstateNeededForBooking, StartTime = valuesNeededForBooking.StartTime, EndTime = valuesNeededForBooking.EndTime,
                 
-                RealEstate = realEstateNeededForBooking,StartTime = valuesNeededForBooking.StartTime,EndTime = valuesNeededForBooking.EndTime,
 
-            };
+        };
 
 
-            return _bookingService.CreateBooking(booking1);
+            int bookingid = _bookingService.CreateBooking(booking1);
+
+            return bookingid;
         }
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 namespace RealEstate.domain.Models
 {
     public class Booking
+
+
     {
 
 
@@ -21,7 +23,6 @@ namespace RealEstate.domain.Models
         required public RealEstatesE RealEstate { get; set; } // SKAL HAVE REALESTATE
 
 
-
-
     }
+
 }

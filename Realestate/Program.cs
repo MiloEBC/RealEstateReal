@@ -17,12 +17,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// Når en ctrller/service vil injecte irealestate w/e ved apien skal den bruge denne implementation. Betyder at hvis du vil lege rundt uden at ændre noget kan du bare lave en ny RealEstateService kalde den nr 2 og så bare implementere den her uden at røre ctrlen. Dependency injektion magic
 builder.Services.AddScoped<IRealEstateCommand, RealEstateCommand>();
 builder.Services.AddScoped<IRealestateQuery, RealEstateQuery>();
 builder.Services.AddScoped<IRealEstateRepoService, RealEstateRepos>();
 builder.Services.AddScoped<IBookingCommand, BookingCommand>();
 builder.Services.AddScoped <IBookingRepoService, BookingRepos>();
+
+
+// Når en ctrller/service vil injecte irealestate w/e ved apien skal den bruge denne implementation. Betyder at hvis du vil lege rundt uden at ændre noget kan du bare lave en ny RealEstateService kalde den nr 2 og så bare implementere den her uden at røre ctrlen. Dependency injektion magic
+
 
 
 
